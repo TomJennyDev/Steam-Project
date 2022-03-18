@@ -27,6 +27,7 @@ body {
   font-size: 15px;
   color: var(--text-color);
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 /*-------- ULTILITES CLASS --------*/
