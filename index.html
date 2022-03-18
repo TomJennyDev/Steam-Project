@@ -7,6 +7,10 @@
     <title>Steam Project</title>
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
     />
     <link
@@ -16,27 +20,30 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header>
-      <navbar>
-        <div>
-          <a href="">
-            <img src="" alt="logo" />
+    <header class="fixed">
+      <navbar class="navbar flex">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+              alt="logo"
+            />
           </a>
         </div>
-        <ul>
+        <ul class="menu">
           <li><a href="#">STORE</a></li>
           <li><a href="#">COMMUNITY</a></li>
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">SUPPORT</a></li>
         </ul>
-        <div>
+        <div class="avatar">
           <a>
-            <img src="" alt="avatar" />
+            <i class="fa-solid fa-user"></i>
           </a>
         </div>
       </navbar>
     </header>
-    <main class="container">
+    <main class="container flex">
       <div class="col">
         <div class="sidebar"></div>
       </div>
@@ -46,9 +53,9 @@
         <!-- OPTIONAL -->
 
         <div class="category">
-          <ul>
+          <!-- <ul>
             <li></li>
-          </ul>
+          </ul> -->
         </div>
         <!-- OPTIONAL -->
         <div class="detail"></div>

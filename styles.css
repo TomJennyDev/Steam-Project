@@ -1,6 +1,8 @@
 :root {
   --text-color: #e5e4dc;
-  --background-color: #171a21;
+  --header-color: #171a21;
+  --background-color: #1b2838;
+  --avatar-background-color: #ffffff7c;
   --button-color: #4c6b22;
   --button-color-hover: #a4d007;
   --primary-color: #417a9b;
@@ -20,7 +22,14 @@ html {
   width: 100%;
 }
 
-/* ULTILITES CLASS */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/*-------- ULTILITES CLASS --------*/
 
 .center {
   display: flex;
@@ -28,11 +37,95 @@ html {
   align-items: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.fixed {
+  position: fixed;
+}
 .visible {
   display: none;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+a {
+  text-decoration: none !important;
+  color: var(--text-color);
+  cursor: pointer;
 }
+
+/*---------- HEADER ---------- */
+header {
+  width: 100%;
+  height: 80px;
+
+  padding: 20px;
+
+  background: var(--header-color);
+  box-shadow: 0 2px 15px black;
+}
+
+header .navbar {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .menu {
+  display: flex;
+  list-style: none;
+}
+
+header .menu li {
+  padding: 10px;
+}
+
+header .logo img {
+  width: 176px;
+  aspect-ratio: auto 176 / 44;
+  height: 44px;
+}
+header .avatar {
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  background-color: var(--avatar-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 15px 0 black;
+}
+
+/*---------- MAIN ---------- */
+.container {
+  height: 100vh;
+}
+.container .col:first-child {
+  flex-grow: 1;
+  fixed: ;
+}
+.container .col:last-child {
+  flex-grow: 5;
+  overflow-y: scroll;
+}
+.container .col::-webkit-scrollbar {
+  display: none;
+}
+
+.container .col {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/*---------- SIDEBAR ---------- */
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  background: var(--header-color);
+  box-shadow: 0 0 20px 0 black;
+}
+
+/*---------- CAROUSEL ---------- */
+
+/*---------- CATEGORY ---------- */
+
+/*---------- DETAIL ---------- */
