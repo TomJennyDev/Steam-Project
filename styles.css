@@ -101,7 +101,6 @@ header .avatar {
 }
 .container .col:first-child {
   flex-grow: 1;
-  fixed: ;
 }
 .container .col:last-child {
   flex-grow: 5;
@@ -130,3 +129,56 @@ header .avatar {
 /*---------- CATEGORY ---------- */
 
 /*---------- DETAIL ---------- */
+
+/* SHOW ALL GAMES */
+.col .showing_game {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+
+  height: auto;
+}
+
+.col .showing_game .game_wrapper {
+  width: 270px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  border-radius: 10px;
+  flex-basis: 0 0 25%;
+}
+
+.col .showing_game .game_wrapper .cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.col .showing_game .game_wrapper .cover img {
+  object-fit: contain;
+}
+
+.col .showing_game .game_wrapper .cover img:hover {
+  filter: brightness(150%);
+}
+
+.col .showing_game .game_wrapper .cover .game_info {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: "Motiva Sans", Sans-serif;
+  font-size: 1em;
+  background: linear-gradient(
+    -45deg,
+    rgba(64, 121, 153, 1) 5%,
+    rgba(42, 62, 89, 1) 95%
+  );
+  height: 45px;
+  align-items: center;
+}
+
+.col .showing_game .game_wrapper .cover .game_info p {
+  padding: 10px;
+  color: #acdbf5;
+}
