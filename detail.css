@@ -3,10 +3,15 @@
   margin-top: 5rem;
 }
 
+#detail h1 {
+  margin-bottom: 0rem;
+}
+
 .container-detail {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.8rem;
 }
 
 .container-detail .game-img {
@@ -19,6 +24,7 @@
 
 .content-detail {
   padding: 1rem;
+  align-self: stretch;
 }
 .container-detail .data {
   display: grid;
