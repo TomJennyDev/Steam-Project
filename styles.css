@@ -18,7 +18,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 body {
@@ -54,6 +53,9 @@ a {
   cursor: pointer;
 }
 
+p {
+  margin: 0;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -113,12 +115,10 @@ header .avatar:hover {
   height: 100vh;
 }
 .container .col:first-child {
-  flex-grow: 1;
   min-width: 20vw;
 }
 .container .col:last-child {
-  flex-grow: 7;
-  width: 80vw;
+  flex-grow: 1;
   overflow-y: scroll;
 }
 .container .col::-webkit-scrollbar {
@@ -269,20 +269,94 @@ header .avatar:hover {
 
 /*---------- CATEGORY ---------- */
 
-.category {
+.category-list {
   width: 100%;
-  padding: 10px;
-}
-.cateogry-list {
-  justify-content: space-between;
+
   flex-wrap: wrap;
 }
-.category .item {
-  min-width: calc(100% / 3);
-  margin: 20px;
-  height: 320px;
+.category-list .item {
+  width: calc(100% / 4);
+  height: 350px;
+  padding: 20px;
   background-color: var(--background-color);
-  box-shadow: 0 0 2px 0 black;
+}
+
+.category-list .item a {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  height: 100%;
+  background-color: #1a2636;
+  border: 2px solid black;
+  overflow: hidden;
+}
+.category-list .item-header {
+  height: 75%;
+  box-shadow: 0 0 5px 0 black;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-list .item .item-header .item-icon {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  transform: translateY(100%);
+
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent);
+
+  transition: all 0.2s ease-in;
+}
+
+.category-list .item:hover .item-header .item-icon {
+  transform: translateY(0);
+}
+
+.category-list .item .item-header .item-icon .fa-brands {
+  padding: 5px 10px;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.category-list .item-header .item-icon {
+  padding: 5px;
+}
+
+.category-list .item-footer {
+  padding: 5px 10px;
+}
+
+.category-list .item-footer p {
+  padding: 5px 0;
+  font-size: 1.1rem;
+}
+
+.category-list .item-footer .item-price {
+  text-align: right;
+  font-weight: bold;
+  color: white;
+}
+
+.category-list .item-footer .item-discount {
+  padding: 0 5px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.category-list .item a img {
+  width: 100%;
+  height: 100%;
+}
+
+.category-list .item:hover a img {
+  filter: brightness(1.1);
+}
+
+.category-list .item a:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
 }
 
 /*---------- DETAIL ---------- */
