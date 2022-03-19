@@ -2,7 +2,7 @@ const getEle = (element) => document.querySelector(element);
 const categoryItem = (item) => {
   return `
 <li class="item">
-<a href="#" data-id=${item._id}>
+<a href="detail.html?id=${item.appid}" data-id=${item._id}>
   <div class="item-header">
     <span class="item-cart">
       <i class="fa-solid fa-cart-plus"></i>

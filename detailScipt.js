@@ -12,8 +12,8 @@ const getSingleGame = async (appID) => {
   }
 };
 
-const getDetailGame = async () => {
-  const data = await getSingleGame(20);
+const getDetailGame = async (id) => {
+  const data = await getSingleGame(id);
   console.log(data);
   const name = document.querySelector("#detail h1");
   name.textContent = data.name;
@@ -82,4 +82,4 @@ const getDetailGame = async () => {
   console.log(data.background);
 };
 
-getDetailGame();
+getDetailGame(window.location.search.slice(4));
