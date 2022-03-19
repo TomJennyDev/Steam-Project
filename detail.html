@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./detail.css">
+  </head>
+  <body>
+    <header class="fixed">
+      <navbar class="navbar flex">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <ul class="menu flex">
+          <li><a href="#">STORE</a></li>
+          <li><a href="#">COMMUNITY</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SUPPORT</a></li>
+        </ul>
+        <div class="avatar">
+          <a>
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      </navbar>
+    </header>
+    <main class="container flex">
+      <div class="col">
+        <div class="sidebar">
+          <div class="search-box center">
+            <input type="text" id="search" placeholder="genres" />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <ul class="genres-menu flex">
+            <li class="active"><a href="#">action</a></li>
+            <li class=""><a href="#">free to play</a></li>
+            <li class=""><a href="#">strategy</a></li>
+            <li class=""><a href="#">adventure</a></li>
+            <li class=""><a href="#">indie</a></li>
+          </ul>
+          <div class="shrink-sidebar">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+        </div>
+      </div>
+    <!-- detail -->
+      <div id="detail">
+        <h1></h1>
+        <h3></h3>
+        <div class="container-detail">  
+            <div class="game-img">
+              <img>
+            </div>
+            <div class="content-detail">
+              
+            </div>
+        </div>
+        
+        <div class="category-tags">
+          
+        </div>
+      </div>
+        <!-- OPTIONAL -->
+      </div>
+    </main>
+    <script src="detailScipt.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./owcarouselConfig.js"></script>
+    <script src="./Api.js"></script>
+    <script src="./renderCategory.js"></script>
+    <script src="./script.js"></script> -->
+  </body>
+</html>
