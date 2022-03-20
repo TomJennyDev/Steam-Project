@@ -18,6 +18,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
     <link rel="stylesheet" href="./style/styles.css" />
+    <link rel="stylesheet" href="./style/detail.css" />
   </head>
   <body>
     <header class="fixed">
@@ -66,56 +67,25 @@
         </div>
       </div>
       <div class="col scroll-show">
-        <!-- OPTIONAL -->
-        <div class="carousel owl-carousel owl-theme"></div>
-        <!-- OPTIONAL -->
-        <div class="title">
-          <h1>Game Category</h1>
+        <div id="detail">
+          <h1></h1>
+          <h3></h3>
+          <div class="container-detail">
+            <div class="game-img">
+              <img />
+            </div>
+            <div class="content-detail"></div>
+          </div>
+          <div class="category-tags"></div>
         </div>
-        <div id="category" class="category">
-          <ul class="category-list flex">
-            <!-- <li class="item">
-              <a href="#">
-                <div class="item-header">
-                  <img
-                    src="https://steamcdn-a.akamaihd.net/steam/apps/10180/header.jpg?t=1545235540"
-                    alt=""
-                  />
-                  <span class="item-icon">
-                    <i class="fa-brands fa-windows"></i>
-                    <i class="fa-brands fa-ubuntu"></i>
-                    <i class="fa-brands fa-apple"></i>
-                  </span>
-                </div>
-                <div class="item-footer">
-                  <p class="item-name">Call of Duty Modern Warefare 2</p>
-                  <p class="item-price">
-                    <s class="item-discount">200.000 VND</s>200.000 VND
-                  </p>
-                </div>
-              </a>
-            </li> -->
-          </ul>
-        </div>
-
-        <!-- OPTIONAL -->
-        <div class="detail"></div>
-        <!-- OPTIONAL -->
       </div>
     </main>
-    <div class="loading">
-      <img src="./img/loading.gif" alt="loading" />
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./script/Api.js"></script>
-    <script src="./script/renderLoading.js"></script>
-    <script src="./script/renderCarousel.js"></script>
-    <script src="./script/owcarouselConfig.js"></script>
     <script src="./script/renderCategory.js"></script>
     <script src="./script/renderGenres.js"></script>
     <script src="./script/filterSearch.js"></script>
-    <script src="./script/script.js"></script>
+    <script src="./script/detailscript.js"></script>
   </body>
 </html>
