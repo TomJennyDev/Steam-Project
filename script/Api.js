@@ -17,8 +17,6 @@ const setParamsToUrl = (objQueryParams) => {
   history.replaceState(null, null, `?${queryParams.toString()}`);
 };
 
-
-
 const getDataFromAPI = async (pathUrl, queryParams = "") => {
   try {
     console.log({ pathUrl, queryParams });
@@ -56,7 +54,7 @@ const getGenresList = async (objParams) => {
   try {
     const pathUrl = "genres";
     const page = objParams?.page ? objParams.page : 1;
-    const limit = objParams?.limit ? objParams.limit : 16;
+    const limit = objParams?.limit ? objParams.limit : 29;
     const queryParams = `?page=${page}&limit=${limit}`;
     const result = await getDataFromAPI(pathUrl, queryParams);
     return result.data;
@@ -69,7 +67,7 @@ const getTagslist = async (objParams) => {
   try {
     const pathUrl = "steamspy-tags";
     const page = objParams?.page ? objParams.page : 1;
-    const limit = objParams?.limit ? objParams.limit : 16;
+    const limit = objParams?.limit ? objParams.limit : 339;
     const queryParams = `?page=${page}&limit=${limit}`;
     const result = await getDataFromAPI(pathUrl, queryParams);
     return result.data;

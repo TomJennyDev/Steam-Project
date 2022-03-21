@@ -84,7 +84,7 @@ const renderCategory = async () => {
         stringGernes && stringTags ? " - " : ""
       }${stringTags}</h1>`;
     } else {
-      getEle(".title").innerHTML = ` <h1>Game category</h1>`;
+      getEle(".title").innerHTML = ` <h1>Games</h1>`;
     }
 
     if (paramsObject.page > 1) {
@@ -120,7 +120,8 @@ const renderCategory = async () => {
 
 $(".category").on("scroll", function () {
   let div = $(this).get(0);
-  if (div.scrollTop + div.clientHeight + 20 >= div.scrollHeight) {
+
+  if (div.scrollTop + div.clientHeight + 140 >= div.scrollHeight) {
     const queryParams = getParamsUrl();
     setParamsToUrl({ name: "page", value: +queryParams?.page + 1 });
     renderCategory();

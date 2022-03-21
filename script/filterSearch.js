@@ -40,6 +40,8 @@ searchEle.addEventListener("keydown", (e) => {
 keywordEle.addEventListener("click", () => {
   keywordEle.style.visibility = "hidden";
   setParamsToUrl({ name: "q", value: "" });
+  setParamsToUrl({ name: "page", value: 1 });
+
   renderCategory();
   const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
 

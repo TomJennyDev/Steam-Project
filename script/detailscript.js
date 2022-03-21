@@ -45,7 +45,9 @@ const getDetailGame = async (id) => {
   else review.textContent = `negative ( ${rating}% )`;
 
   const releaseDate = document.querySelector("#release-date");
-  releaseDate.textContent = data["release_date"];
+  releaseDate.textContent = new Date(data["release_date"]).toLocaleDateString(
+    "en-US"
+  );
 
   const developer = document.querySelector("#dev");
   developer.textContent = data.developer.join(", ");
@@ -59,6 +61,8 @@ const getDetailGame = async (id) => {
     btn = document.createElement("button");
     btn.className = "category-tag";
     btn.textContent = tag;
+    btn.setAttribute("data-name", tag);
+    btn.setAttribute("onclick", "gettagsId(this)");
     categoryTag.appendChild(btn);
   });
 

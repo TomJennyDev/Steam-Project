@@ -1,6 +1,6 @@
 let arrParams = [
   { name: "page", value: 1 },
-  { name: "limit", value: 8 },
+  { name: "limit", value: 16 },
 ];
 
 async function main() {
@@ -17,26 +17,6 @@ async function main() {
 }
 
 main();
-
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    const scrollCategory = new SweetScroll({
-      trigger: ".scroll-category[data-scroll]",
-      duration: 1000,
-      easing: "easeOutQuint",
-      offset: -100,
-    });
-    const scrollerToTop = new SweetScroll({
-      /* some options */
-      trigger: ".scroll-top[data-scroll]",
-      duration: 3000,
-      easing: "easeOutQuint",
-      offset: 0,
-    });
-  },
-  false
-);
 
 // toggle sidebar
 getEle(".shrink-sidebar").addEventListener("click", () => {
@@ -55,8 +35,6 @@ getEle(".shrink-sidebar").addEventListener("click", () => {
         ".shrink-sidebar"
       ).innerHTML = `<i class="fa-solid fa-angle-right"></i>`);
 });
-
-console.log(getListEle(".genres-menu"));
 
 //toggle navbar
 

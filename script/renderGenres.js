@@ -1,12 +1,4 @@
 const getGenresId = (genreItem) => {
-  const positioncategory = getEle(".category").offsetTop;
-
-  getEle(".container .col:last-child").scrollTo({
-    top: positioncategory,
-    left: 0,
-    behavior: "smooth",
-  });
-
   const genresName = genreItem.getAttribute("data-name");
 
   const paramsObject = {
@@ -25,6 +17,14 @@ const getGenresId = (genreItem) => {
     setParamsToUrl({ name: "page", value: 1 });
     renderCategory();
   } else {
+    const positioncategory = getEle(".category").offsetTop;
+
+    getEle(".container .col:last-child").scrollTo({
+      top: positioncategory,
+      left: 0,
+      behavior: "smooth",
+    });
+
     const queryParams = {
       name: "genres",
       value: paramsObject.genres,
