@@ -97,3 +97,13 @@ getEle(".shrink-sidebar").addEventListener("click", () => {
 });
 
 console.log(getListEle(".genres-menu"));
+
+const toggleFilter = () => {
+  getEle(".hamburger-lines .line1").classList.toggle("active-line1");
+  getEle(".hamburger-lines .line2").classList.toggle("active-line2");
+  getEle(".hamburger-lines .line3").classList.toggle("active-line3");
+
+  getEle(".container .col:first-child").classList.toggle("visible-sidebar");
+};
+
+getEle(".hamburger-lines").addEventListener("click", toggleFilter);

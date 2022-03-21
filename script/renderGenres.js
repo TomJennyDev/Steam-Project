@@ -13,11 +13,17 @@ const getGenresId = (genreItem) => {
     genres: genresName,
   };
 
+  const isMatch = getParamsUrl()?.genres === genresName;
+
   const isDetailPage = window.location.pathname.includes("detail");
 
   if (isDetailPage) {
     let stringParams = `?genres=${paramsObject.genres}`;
     replaceUrlDocument(stringParams);
+  } else if (isMatch) {
+    setParamsToUrl({ name: "genres", value: "" });
+    setParamsToUrl({ name: "page", value: 1 });
+    renderCategory();
   } else {
     const queryParams = {
       name: "genres",

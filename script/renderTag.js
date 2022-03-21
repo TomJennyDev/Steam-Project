@@ -5,11 +5,17 @@ const gettagsId = (tagItem) => {
     steamspy_tags: tagsName,
   };
 
+  const isMatch = getParamsUrl()?.steamspy_tags === tagsName;
+
   const isDetailPage = window.location.pathname.includes("detail");
 
   if (isDetailPage) {
     let stringParams = `?steamspy_tags=${paramsObject.steamspy_tags}`;
     replaceUrlDocument(stringParams);
+  } else if (isMatch) {
+    setParamsToUrl({ name: "steamspy_tags", value: "" });
+    setParamsToUrl({ name: "page", value: 1 });
+    renderCategory();
   } else {
     const positioncategory = getEle(".category").offsetTop;
 

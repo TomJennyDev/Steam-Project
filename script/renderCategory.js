@@ -81,7 +81,7 @@ const renderCategory = async () => {
         queryParams?.genres ? "Genres: " + queryParams?.genres : ""
       }`;
       getEle(".title").innerHTML = `<h1>${stringGernes}${
-        stringGernes & stringTags ? " - " : ""
+        stringGernes && stringTags ? " - " : ""
       }${stringTags}</h1>`;
     } else {
       getEle(".title").innerHTML = ` <h1>Game category</h1>`;

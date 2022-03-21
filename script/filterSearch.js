@@ -13,6 +13,8 @@ searchEle.addEventListener("keydown", (e) => {
       replaceUrlDocument(stringParams);
     } else {
       setParamsToUrl({ name: "q", value: string });
+      setParamsToUrl({ name: "page", value: 1 });
+
       if (string) {
         keywordEle.style.visibility = "visible";
       }
@@ -27,6 +29,11 @@ searchEle.addEventListener("keydown", (e) => {
 
       renderCategory();
     }
+    const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+    if (width < 415) {
+      toggleFilter();
+    }
   }
 });
 
@@ -34,6 +41,11 @@ keywordEle.addEventListener("click", () => {
   keywordEle.style.visibility = "hidden";
   setParamsToUrl({ name: "q", value: "" });
   renderCategory();
+  const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+  if (width < 415) {
+    toggleFilter();
+  }
 });
 
 //search by genres
