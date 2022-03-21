@@ -23,12 +23,17 @@
     <header class="fixed">
       <navbar class="navbar flex">
         <div class="logo">
-          <a href="#">
+          <a href="index.html#">
             <img
               src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
               alt="logo"
             />
           </a>
+        </div>
+        <div class="hamburger-lines">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
         </div>
         <ul class="menu flex">
           <li><a href="#">STORE</a></li>
@@ -41,6 +46,7 @@
             <i class="fa-solid fa-user"></i>
           </a>
         </div>
+        <div></div>
       </navbar>
     </header>
     <main class="container flex">
@@ -53,25 +59,30 @@
           <div id="keyword">
             <span class="keyword-item"></span>
           </div>
-          <ul class="genres-menu flex">
-            <!-- <li class="active"><a href="#">action</a></li> -->
-            <!-- <li class=""><a href="#">free to play</a></li>
-            <li class=""><a href="#">strategy</a></li>
-            <li class=""><a href="#">adventure</a></li>
-            <li class=""><a href="#">indie</a></li> -->
-          </ul>
+          <div id="genres">
+            <ul class="genres-menu flex">
+              <!-- <li class="active"><a href="#">action</a></li> -->
+              <!-- <li class=""><a href="#">free to play</a></li>
+              <li class=""><a href="#">strategy</a></li>
+              <li class=""><a href="#">adventure</a></li>
+              <li class=""><a href="#">indie</a></li> -->
+            </ul>
+          </div>
+          <div id="tags">
+            <ul class="tags-menu flex"></ul>
+          </div>
           <div class="shrink-sidebar">
             <i class="fa-solid fa-chevron-left"></i>
           </div>
         </div>
       </div>
-      <div class="col scroll-show">
+      <div class="col">
         <!-- OPTIONAL -->
-        <div class="carousel owl-carousel owl-theme"></div>
-        <!-- OPTIONAL -->
-        <div class="title">
-          <h1>Game Category</h1>
+        <div class="carousel">
+          <div class="owl-carousel owl-theme"></div>
         </div>
+        <!-- OPTIONAL -->
+        <div class="title"></div>
         <div id="category" class="category">
           <ul class="category-list flex">
             <!-- <li class="item">
@@ -103,11 +114,12 @@
         <!-- OPTIONAL -->
       </div>
     </main>
-    <div class="loading">
+    <!-- <div class="loading">
       <img src="./img/loading.gif" alt="loading" />
-    </div>
-
+    </div> -->
+    <script src="https://unpkg.com/sweet-scroll/sweet-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./script/Api.js"></script>
     <script src="./script/renderLoading.js"></script>
@@ -115,6 +127,7 @@
     <script src="./script/owcarouselConfig.js"></script>
     <script src="./script/renderCategory.js"></script>
     <script src="./script/renderGenres.js"></script>
+    <script src="./script/renderTag.js"></script>
     <script src="./script/filterSearch.js"></script>
     <script src="./script/script.js"></script>
   </body>

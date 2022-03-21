@@ -58,25 +58,33 @@ const itemLoading = () => {
   return `<div class="container-loading"><div class="loading-category"><div></div><div></div><div></div><div></div></div></div>`;
 };
 
-const renderCategory = async (params) => {
+const renderCategory = async () => {
   try {
     // get element category item
     const categoryList = getEle(".category-list");
 
+    const queryParams = getParamsUrl();
+
     const paramsObject = {
-      page: params?.page ? params.page : 1,
-      limit: params?.limit ? params.limit : 16,
-      genres: params?.genres,
-      steamspy_tags: params?.steamspy_tags,
-      q: params?.q,
+      page: queryParams?.page ? queryParams.page : 1,
+      limit: queryParams?.limit ? queryParams.limit : 16,
+      genres: queryParams?.genres,
+      steamspy_tags: queryParams?.steamspy_tags,
+      q: queryParams?.q,
     };
 
-    console.log("paramsObject", paramsObject);
-
-    localStorage.setItem("queryParams", JSON.stringify(paramsObject));
-
-    if (params?.genres) {
-      getEle(".title h1 ").textContent += " - " + params?.genres;
+    if (queryParams?.genres || queryParams?.steamspy_tags) {
+      const stringTags = `${
+        queryParams?.steamspy_tags ? "Tags: " + queryParams?.steamspy_tags : ""
+      }`;
+      const stringGernes = `${
+        queryParams?.genres ? "Genres: " + queryParams?.genres : ""
+      }`;
+      getEle(".title").innerHTML = `<h1>${stringGernes}${
+        stringGernes & stringTags ? " - " : ""
+      }${stringTags}</h1>`;
+    } else {
+      getEle(".title").innerHTML = ` <h1>Game category</h1>`;
     }
 
     if (paramsObject.page > 1) {
@@ -87,11 +95,14 @@ const renderCategory = async (params) => {
       categoryList.innerHTML = itemLoading();
     }
     const data = await getAllGames(paramsObject);
-
+    console.log(data);
     const loadingELement = getEle(".container-loading");
-    loadingELement.parentNode.removeChild(loadingELement);
+    if (loadingELement) {
+      loadingELement.parentNode.removeChild(loadingELement);
+    }
 
     let contentCategory = "";
+
     data?.forEach((item) => {
       const liEle = categoryItem(item);
       contentCategory += liEle;
@@ -107,14 +118,11 @@ const renderCategory = async (params) => {
   }
 };
 
-$(".container .scroll-show").on("scroll", function () {
+$(".category").on("scroll", function () {
   let div = $(this).get(0);
   if (div.scrollTop + div.clientHeight + 20 >= div.scrollHeight) {
-    let objParams = JSON.parse(localStorage.getItem("queryParams"));
-    console.log(objParams);
-    objParams = { ...objParams, page: objParams.page + 1 };
-    console.log(objParams);
-
-    renderCategory(objParams);
+    const queryParams = getParamsUrl();
+    setParamsToUrl({ name: "page", value: +queryParams?.page + 1 });
+    renderCategory();
   }
 });

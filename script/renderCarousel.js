@@ -1,6 +1,6 @@
 const carouselItem = (item) => {
   return ` <div class="item">
-  <img src=${item.header_image} alt=${item.name} global="" offensive="">
+  <img src=${item.header_image} alt=${item.name} >
   <div class="item-icon">
   ${item.platforms
     .map((Operations) => {
@@ -44,7 +44,7 @@ const carouselItem = (item) => {
 };
 
 const renderCarousel = async () => {
-  const carousel = getEle(".carousel");
+  const carousel = getEle(".owl-carousel");
 
   const data = await getFeaturedGames();
   console.log(data);

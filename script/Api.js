@@ -1,6 +1,23 @@
 const BASE_URL = "https://cs-steam-api.herokuapp.com/";
 const getEle = (element) => document.querySelector(element);
 const getListEle = (elements) => document.querySelectorAll(elements);
+const getParamsUrl = () => {
+  return new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+};
+const replaceUrlDocument = (queryParams) => {
+  let origin = window.location.origin;
+  window.location.replace(`${origin}/${queryParams}`);
+};
+
+const setParamsToUrl = (objQueryParams) => {
+  const queryParams = new URLSearchParams(window.location.search);
+  queryParams.set(objQueryParams?.name, objQueryParams?.value);
+  history.replaceState(null, null, `?${queryParams.toString()}`);
+};
+
+
 
 const getDataFromAPI = async (pathUrl, queryParams = "") => {
   try {

@@ -71,8 +71,29 @@ const getDetailGame = async (id) => {
 async function main() {
   await rendergenresList();
   await getDetailGame(window.location.search.slice(4));
-  console.log("url", window.location.search);
+  await rendertagsList();
+
   getEle(".loading").classList.add("visible");
 }
 
 main();
+
+// toggle sidebar
+getEle(".shrink-sidebar").addEventListener("click", () => {
+  const col = getEle(".container .col:first-child");
+
+  col.classList.contains("shrink-col")
+    ? col.classList.remove("shrink-col")
+    : col.classList.add("shrink-col");
+
+  const arrowRight = getEle(".shrink-sidebar .fa-solid");
+  arrowRight.classList.contains("fa-angle-right")
+    ? (getEle(
+        ".shrink-sidebar"
+      ).innerHTML = `<i class="fa-solid fa-angle-left"></i>`)
+    : (getEle(
+        ".shrink-sidebar"
+      ).innerHTML = `<i class="fa-solid fa-angle-right"></i>`);
+});
+
+console.log(getListEle(".genres-menu"));

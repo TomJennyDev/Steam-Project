@@ -2,17 +2,16 @@ function configCarousel() {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
+    center: 1,
     items: 1,
     responsiveClass: true,
     autoplay: true,
-    autoplayTimeout: 1000,
+    autoplayTimeout: 2000,
     autoplayHoverPause: true,
-    animateIn: "flipInX",
-    animateOut: "slideOutDown",
     responsive: {
       0: {
         items: 1,
-        nav: true,
+        nav: false,
       },
       600: {
         items: 1,
@@ -21,7 +20,6 @@ function configCarousel() {
       1000: {
         items: 1,
         nav: true,
-        loop: false,
       },
     },
   });
